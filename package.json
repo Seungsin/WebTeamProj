@@ -1,0 +1,25 @@
+{
+  "name": "webteamproj",
+  "version": "1.0.0",
+  "description": "2021-1 고급웹프로그래밍 팀프로젝트",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Seungsin/WebTeamProj.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Seungsin/WebTeamProj/issues"
+  },
+  "homepage": "https://github.com/Seungsin/WebTeamProj#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
