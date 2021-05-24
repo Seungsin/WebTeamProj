@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const ShareConsume1Schema = new Schema({
+const CobuyingSchema = new Schema({
+    option: Integer,
     title: String,
     body: String,
     gate: String,
@@ -30,5 +31,5 @@ const ShareConsume1Schema = new Schema({
     account: String
 });
 
-const ShareConsume1 = mongoose.model('ShareConsume1', ShareConsume1Schema);
-module.exports = ShareConsume1
+const Cobuying = mongoose.model('Cobuying', CobuyingSchema);
+module.exports = Cobuying
