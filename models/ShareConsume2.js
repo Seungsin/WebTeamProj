@@ -16,7 +16,18 @@ const ShareConsume2Schema = new Schema({
         type:Date,
         default: new Date()
     },
-    image: String
+    image: String,
+    comments: [{
+        body: String,
+        userid: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required:true
+        },
+        people: Integer,
+        paying: String
+    }],
+    account: String
 });
 
 const ShareConsume2 = mongoose.model('ShareConsume2', ShareConsume2Schema);

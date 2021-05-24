@@ -14,7 +14,15 @@ const ShareSchema = new Schema({
         type:Date,
         default: new Date()
     },
-    image: String
+    image: String,
+    comments: [{
+        body: String,
+        userid: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'User',
+            required:true
+        }
+    }]
 });
 
 const Share = mongoose.model('Share', ShareSchema);
