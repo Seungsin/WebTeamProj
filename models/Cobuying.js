@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
 const CobuyingSchema = new Schema({
-    option: Integer,
+    option: {type : Number},
     title: String,
     body: String,
     gate: String,
@@ -11,8 +11,8 @@ const CobuyingSchema = new Schema({
         ref: 'User',
         required:true
     },
-    buying: Integer,
-    minimum: Integer,
+    buying: {type : Number},
+    minimum: {type : Number},
     datePosted: {
         type:Date,
         default: new Date()
@@ -25,7 +25,7 @@ const CobuyingSchema = new Schema({
             ref: 'User',
             required:true
         },
-        buying: Integer,
+        buying: {type : Number},
         paying: String
     }],
     account: String

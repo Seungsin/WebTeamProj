@@ -53,6 +53,19 @@ app.use("*", (req, res, next)=>{
     next()
 })
 
+// new posts
 app.use('/newcobuying/store', validateMiddleWare)
 app.use('/newexchange/store', validateMiddleWare)
 app.use('/newshare/store', validateMiddleWare)
+
+// 로그인, 회원가입
+app.get('/auth/register', redirectIfAuthenticatedMiddleware, newUserController)
+app.get('/auth/login', redirectIfAuthenticatedMiddleware, loginController)
+app.post('/users/register', redirectIfAuthenticatedMiddleware, storeUserController)
+app.post('/users/login', redirectIfAuthenticatedMiddleware, loginUserController)
+
+//main pages
+app.get('/', mainController)
+app.get('/cobuying', cobuyingHomeController)
+app.get('/exchange', exchangeHomeController)
+app.get('/share', shareHomeController)
