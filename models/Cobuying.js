@@ -11,7 +11,10 @@ const CobuyingSchema = new Schema({
         ref: 'User',
         required:true
     },
-    buying: {type : Number},
+    buying: {
+        type : Number,
+        default: 0
+    },
     minimum: {type : Number},
     deadline: {
         type:Date,

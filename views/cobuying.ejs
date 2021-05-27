@@ -9,16 +9,30 @@
             <div class="post-preview">
                 <a href="/cobuyingpost/<%=posts[i]._id%>">
                     <h2 class="post-title">
+                        <!-- 타이틀 -->
                         <%= posts[i].title %>
                     </h2>
-                    <h3 class="post-subtitle">
-                        <%=posts[i].body %>
-                    </h3>
+                    <!-- 이미지 -->
+                    <img src='<%=posts[i].image%>'/>
+                    <!-- 작성자 -->
+                    <div>
+                        작성자 :
+                        <%=posts[i].userid.username%>
+                    </div>
+                    <!-- 모인금액 -->
+                    <div>
+                        모인금액 :
+                        <%=posts[i].buying%>
+                        /
+                        <%=posts[i].minimum%>
+                    </div>
+                    <!-- 마감시간 -->
+                    <div>
+                        마감 날짜 : 
+                        <%= posts[i].deadline.toLocaleString() %>
+                    </div>
                 </a>
-                <p class="post-meta">
-                   
-                    on <%= posts[i].deadline.toDateString() %>
-                </p>
+                
             </div>
             <hr />
             <%}%>
