@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1><%=post.title%></h1>
+                        <div>
+                            최소금액 : 
+                            <%=post.minimum%>
+                        </div>
+                        <div>
+                            모인금액
+                        </div>
+                        <div> 마감일 : 
+                            <%=post.deadline%>
+                        </div>
+                        <div>
+                            마감까지
+                            <span id="count"><%=post.deadline.getTime()%></span>
+                            남았습니다.
+                        </div>
+                        <h2 class="subheading"><%=post.body%></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <script src='/js/timer.js'></script>
+    </body>
+
+</html>

@@ -10,7 +10,7 @@ const ShareSchema = new Schema({
         ref: 'User',
         required:true
     },
-    datePosted: {
+    deadline: {
         type:Date,
         default: new Date()
     },

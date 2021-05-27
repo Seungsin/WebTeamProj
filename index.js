@@ -33,6 +33,7 @@ const mainController = require('./controllers/main')
 const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
 const storeUserController = require('./controllers/storeUser')
+const newUserController = require('./controllers/newUser')
 
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware')
 const validateMiddleWare = require('./middleware/validationMiddleware')
@@ -69,3 +70,16 @@ app.get('/', mainController)
 app.get('/cobuying', cobuyingHomeController)
 app.get('/exchange', exchangeHomeController)
 app.get('/share', shareHomeController)
+
+//post
+app.get('/cobuyingpost/:id', cobuyingGetController)
+app.get('/exchangegpost/:id', exchangeGetController)
+app.get('/sharepost/:id', shareGetController)
+
+//new post
+app.get('/newcobuying', authMiddleware, cobuyingNewController)
+app.get('/newexchange', authMiddleware, exchangeNewController)
+app.get('/newshare', authMiddleware, shareNewController)
+app.post('/newcobuying/store', authMiddleware, cobuyingStoreController)
+app.post('/newexchange/store', authMiddleware, exchangeStoreController)
+app.post('/newshare/store', authMiddleware, shareStoreController)

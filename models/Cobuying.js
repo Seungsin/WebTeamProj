@@ -13,7 +13,7 @@ const CobuyingSchema = new Schema({
     },
     buying: {type : Number},
     minimum: {type : Number},
-    datePosted: {
+    deadline: {
         type:Date,
         default: new Date()
     },

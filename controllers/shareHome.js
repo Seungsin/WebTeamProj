@@ -2,8 +2,7 @@ const Share = require('../models/Share.js')
 
 module.exports = async (req, res) =>{
     const posts = await Share.find({}).populate('userid')
-    console.log(req.session)
-    res.render('index',{
+    res.render('share',{
         posts
     });
 }
