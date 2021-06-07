@@ -54,18 +54,18 @@
                             <div class="card-body p-4">
                                 <div class="text-center">
                                     <!-- Product title-->
-                                    <h5 id="title" class="fw-bolder">헹주 나눔합니다.</h5>
-                                    <!-- 제목, 본문, 문, 작성자아이디, 마감, 이미지 -->
+                                    <h5 id="title" class="fw-bolder"><%= posts[i].title %></h5>
+                                    
                                     <!--작성자-->
-                                    <div style="text-align: left;">작성자 <span id="name">seeun-320</span></div>
-                                    <div style="text-align: left;">위치 <span id="gate">쪽문</span></div>
-                                    <div style="text-align: left;">마감시간 <span id="time">~2021. 05. 30 12:00</span></div>
+                                    <div style="text-align: left;">작성자 <span id="name"><%= posts[i].userid.username %></span></div>
+                                    <div style="text-align: left;">위치 <span id="gate"><%= posts[i].gate %></span></div>
+                                    <div style="text-align: left;">마감시간 <span id="time"><%= posts[i].deadline.toLocaleString() %></span></div>
                                    
                                 </div>
                             </div>
                             <!-- Product actions-->
                             <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
+                                <div class="text-center"><a class="btn btn-outline-dark mt-auto"  href="/sharepost/<%=posts[i]._id%>">View options</a></div>
                             </div>
                         </div>
                     </div>
