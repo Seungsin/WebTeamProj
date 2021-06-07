@@ -32,6 +32,9 @@ const CobuyingSchema = new Schema({
             ref: 'User',
             required:true
         },
+        username:{
+            type : String,
+        },
         buying: {
             type : Number,
             default : 0
