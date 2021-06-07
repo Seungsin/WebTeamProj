@@ -53,34 +53,29 @@
 
 
     </div>
-    <hr class="mx-5 mt-5">
-    <div class="container mt-3 pt-3 ">
+    <!-- <hr class="mx-5 mt-5"> -->
+    <div style=" border-radius:40px; border:7px solid #29854c85 " class="mx-5 my-5 px-2 py-3">
         <h2 class="mb-3" style="text-align: center;">나눔 받기</h2>
-        <form  action="/cobuyingpost/newcomment/<%=post._id%>" method="POST">
-            <div class=" pt-3 mb-3 rounded">
-                <div class=" container control-group bg-light rounded mb-3 pt-2">
-                    <h4>희망사항</h4 >
-                    <div class="form-group floating-label-form-group controls">
-                        <input name="content" class="form-control" id="content" type="text" placeholder="희망사항을 입력하세요" />
+        <div class="container mt-3  ">
+            <form  action="/sharepost/newcomment/<%=post._id%>" method="POST">
+                <div class=" mb-3 rounded">
+                    <div class=" container control-group rounded mb-3 pt-2">
+                        <h4>희망사항</h4 >
+                        <div class="form-group floating-label-form-group controls">
+                            <input name="content" class="form-control" id="content" type="text" placeholder="희망사항을 입력하세요" />
+                        </div>
                     </div>
+                    
                 </div>
-                <div class=" container control-group bg-light rounded mb-3 pt-2">
-                    <h4>받을 개수</h4>
-                    <div class="form-group floating-label-form-group controls">
-                        <input name="buying" class="form-control" id="buying" type="number" placeholder="개수를 입력하세요(숫자만 입력)"/>
-                    </div>
+                <div id="form-group " style="text-align: center;" >
+                    <button class="btn btn-success mb-1 rounded" id="sendMessageButton" type="submit">작성하기</button>
                 </div>
+            </form>
 
-                <br />
-                
-            </div>
-            <div id="form-group " style="text-align: center;" >
-                <button class="btn btn-success mb-3 rounded" id="sendMessageButton" type="submit">작성하기</button>
-            </div>
-        </form>
+        </div>
     </div>
     <div class="container">
-        <h2>구매신청목록</h2>
+        <h2>나눔신청목록</h2>
         <% for(var i=0;i<post.comments.length; i++){%>
             <div class="post-preview container my-3 py-1 bg-light rounded"">
                     <div>
@@ -93,11 +88,7 @@
                         희망사항 :
                         <%=post.comments[i].content%>
                     </div>
-                    
-                    <div>
-                        구매금액 :
-                        <%=post.comments[i].buying%>
-                    </div>
+                   
             </div>
             <%}%>
     </div>
