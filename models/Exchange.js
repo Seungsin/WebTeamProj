@@ -16,7 +16,7 @@ const ExchangeSchema = new Schema({
     },
     image: String,
     comments: [{
-        body: String,
+        content: String,
         userid: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
