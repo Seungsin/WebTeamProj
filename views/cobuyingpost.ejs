@@ -50,7 +50,7 @@
                 <div>
                     <%if(post.isOwner==1){%>
                         <!-- <div>주인은 너다</div> -->
-                        <a class="btn btn-outline-success mt-auto" href="/cobuying/finish/<%=post._id%>">마감하기</a>
+                        <a class="btn btn-outline-success mt-auto" href="/share/finish/<%=post._id%>">마감하기</a>
                     <%}%>
                 </div>
                 <%}else{%>
@@ -128,6 +128,7 @@
     <%- include('layouts/footer')-%>
     <%- include('layouts/script')-%>
     <script src="/js/timer.js"></script>
+    <script src="/js/isFin.js"></script>
 </body>
 
 </html>
