@@ -78,7 +78,7 @@ app.get('/share', shareHomeController)
 
 //post
 app.get('/cobuyingpost/:id', cobuyingGetController)
-app.get('/exchangegpost/:id', exchangeGetController)
+app.get('/exchangepost/:id', exchangeGetController)
 app.get('/sharepost/:id', shareGetController)
 
 //new post
