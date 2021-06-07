@@ -39,8 +39,6 @@ const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthen
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const authMiddleware = require('./middleware/authMiddleware')
 
-const authWarningController = require('./controllers/authWarning')
-
 const cobCommentController = require('./controllers/cobCommentStore')
 const exCommentController = require('./controllers/exCommentStore')
 const shCommentController = require('./controllers/shCommentStore')
