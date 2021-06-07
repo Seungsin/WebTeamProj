@@ -9,6 +9,6 @@ setInterval(function() {
         var hour = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
         var min = Math.floor((distance % (1000*60*60))/(1000*60));
         var sec = Math.floor((distance % (1000*60))/1000);
-        document.getElementById("count").innerHTML =  day + "일 " + hour + ": " + min + ": " + sec;
+        document.getElementById("count").innerHTML = '마감까지 '+ day + "일 " + hour + ": " + min + ": " + sec +'남았습니다';
     }
 }, 1000);
