@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('layouts/header')-%>
+    <body>
+         <!-- Navigation-->
+         <%- include('layouts/navbar_white')-%>
+         
+        <!-- Header-->
+        <header class="bg-success py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">☘교환 새글쓰기☘</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">형식에 맞게 글을 써주세요!</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section-->
+        <section class="container my-4">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <form action="/newcobuying/store" method="POST" enctype="multipart/form-data">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <h4>제목</h4>
+                                <input name="title" class="form-control" id="title" type="text" placeholder="감자, 고구마 교환하실 분" />
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <h4>위치</h4>
+                                <input name="gate" class="form-control" id="gate" type="number" placeholder="쪽문" />
+                            </div>
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls">
+                                <h4>마감일</h4>
+                                <input name="deadline" class="form-control" id="deadline" type="date"/>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <h4>내용</h4>
+                                <textarea rows="5" class="form-control" id="body" name="body"></textarea>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls">
+                                <h4>이미지</h4>
+                                <input type="file" class="form-control" id="image" name="image">
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group mb-5" style="text-align: right;">
+                            <button type="submit" class="btn btn-success">저장하기</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+        <%- include('layouts/footer')-%>
+    </body>
+</html>

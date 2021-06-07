@@ -1,7 +1,8 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
-const ShareConsume1Schema = new Schema({
+const CobuyingSchema = new Schema({
+    option: {type : Number},
     title: String,
     body: String,
     gate: String,
@@ -10,25 +11,36 @@ const ShareConsume1Schema = new Schema({
         ref: 'User',
         required:true
     },
-    buying: Integer,
-    minimum: Integer,
-    datePosted: {
+    buying: {
+        type : Number,
+        default: 0
+    },
+    sum:{
+        type : Number,
+        default: 0
+    },
+    minimum: {type : Number},
+    deadline: {
         type:Date,
         default: new Date()
     },
     image: String,
     comments: [{
-        body: String,
+        content: String,
         userid: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required:true
         },
-        buying: Integer,
+        buying: {
+            type : Number,
+            default : 0
+        },
         paying: String
     }],
+    // comments:[],
     account: String
 });
 
-const ShareConsume1 = mongoose.model('ShareConsume1', ShareConsume1Schema);
-module.exports = ShareConsume1
+const Cobuying = mongoose.model('Cobuying', CobuyingSchema);
+module.exports = Cobuying

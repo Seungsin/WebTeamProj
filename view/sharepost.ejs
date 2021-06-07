@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <%- include('layouts/header')-%>
+    <body>
+         <!-- Navigation-->
+         <%- include('layouts/navbar_white')-%>
+    
+    <!-- Header-->
+    <!-- <header class="bg-success py-5 " >
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">☘공동구매☘</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">물물교환을 위한 게시판 입니다!</p>
+                </div>
+            </div>
+        </header> -->
+
+    <div class="container px-4 px-lg-5 mt-5">
+        <div class="row">
+            <span class="col" style="width: 40%;">
+                <img style="height: 300px;margin-right: 30px;" src="<%= posts[i].image %>g"
+                    alt="..." />
+            </span>
+            <span class="col">
+                <h1><%=post.title%></h1>
+                <!-- <h1>스팸 나눔합니다.</h1> -->
+               
+                <div style="margin-top:30px; margin-bottom: 20px;">
+                    위치 :
+                    <%=post.gate%>
+                    <!-- 쪽문 -->
+                </div>
+                <div style="margin-bottom: 20px;">
+                    마감일 :
+                    <%=post.deadline%>
+                    <!-- 2020.12.13 -->
+                </div>
+                <div style="margin-bottom: 20px;">
+                    마감까지
+                    <span id="count"><%=post.deadline.getTime()%></span>
+                    <!-- 12시간 23분 23초 -->
+                    남았습니다.
+                </div>
+            <span>
+        </div>
+        <div class="mt-5">
+            <!-- <h2 class="subheading"><%=post.body%></h2> -->
+            <h3 id="body">
+                <%=post.body%>
+            </h3>
+        </div>
+
+
+    </div>
+    <hr class="mx-5 mt-5">
+    <div class="container mt-3 pt-3 ">
+        <h2 class="mb-3" style="text-align: center;">나눔 받기</h2>
+        <form  action="/cobuyingpost/newcomment/<%=post._id%>" method="POST">
+            <div class=" pt-3 mb-3 rounded">
+                <div class=" container control-group bg-light rounded mb-3 pt-2">
+                    <h4>희망사항</h4 >
+                    <div class="form-group floating-label-form-group controls">
+                        <input name="content" class="form-control" id="content" type="text" placeholder="희망사항을 입력하세요" />
+                    </div>
+                </div>
+                <div class=" container control-group bg-light rounded mb-3 pt-2">
+                    <h4>받을 개수</h4>
+                    <div class="form-group floating-label-form-group controls">
+                        <input name="buying" class="form-control" id="buying" type="number" placeholder="개수를 입력하세요(숫자만 입력)"/>
+                    </div>
+                </div>
+
+                <br />
+                
+            </div>
+            <div id="form-group " style="text-align: center;" >
+                <button class="btn btn-success mb-3 rounded" id="sendMessageButton" type="submit">작성하기</button>
+            </div>
+        </form>
+    </div>
+    <br>
+    <%- include('layouts/footer')-%>
+</body>
+
+</html>
