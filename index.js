@@ -39,7 +39,9 @@ const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthen
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const authMiddleware = require('./middleware/authMiddleware')
 
-const commentController = require('./controllers/commentStore')
+const cobCommentController = require('./controllers/cobCommentStore')
+const exCommentController = require('./controllers/exCommentStore')
+const shCommentController = require('./controllers/shCommentStore')
 
 app.use(expressSession({
     resave: true,
@@ -60,6 +62,7 @@ app.use("*", (req, res, next)=>{
 app.use('/newcobuying/store', validateMiddleWare)
 app.use('/newexchange/store', validateMiddleWare)
 app.use('/newshare/store', validateMiddleWare)
+
 
 // 로그인, 회원가입
 app.get('/auth/register', redirectIfAuthenticatedMiddleware, newUserController)
@@ -87,4 +90,6 @@ app.post('/newexchange/store', authMiddleware, exchangeStoreController)
 app.post('/newshare/store', authMiddleware, shareStoreController)
 
 //comment
-app.post('/cobuyingpost/newcomment/:id', commentController)
+app.post('/cobuyingpost/newcomment/:id',authMiddleware, cobCommentController)
+app.post('/exchangepost/newcomment/:id',authMiddleware, exCommentController)
+app.post('/sharepost/newcomment/:id',authMiddleware, shCommentController)
