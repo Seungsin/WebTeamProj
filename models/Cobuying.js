@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const CobuyingSchema = new Schema({
     option: {type : Number},
+    isfinished:{
+        type:Number,
+        default:0
+    },
     title: String,
     body: String,
     gate: String,
@@ -31,6 +35,9 @@ const CobuyingSchema = new Schema({
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required:true
+        },
+        username:{
+            type : String,
         },
         buying: {
             type : Number,
