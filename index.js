@@ -53,8 +53,13 @@ app.use(expressSession({
     secret:'keyboard cat'
 }))
 
-app.listen(4000, ()=>{
-    console.log('App listening on port 4000')
+let post = process.env.PORT
+if (post == null || port == "") {
+    port = 4000
+}
+
+app.listen(port, ()=>{
+    console.log('App listening ...')
 })
 
 app.use("*", (req, res, next)=>{
