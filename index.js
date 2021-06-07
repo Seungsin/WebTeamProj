@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(fileUpload())
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://cathy77:1234@cluster0.jm4mt.mongodb.net/test'), {useNewUrlParser:true}
+mongoose.connect('mongodb+srv://cathy:1234@cluster0.jm4mt.mongodb.net/test'), {useNewUrlParser:true}
 
 const cobuyingGetController = require('./controllers/cobuyingGet')
 const cobuyingHomeController = require('./controllers/cobuyingHome')
