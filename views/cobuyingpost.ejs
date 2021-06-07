@@ -82,6 +82,28 @@
                 <button class="btn btn-success mb-3 rounded" id="sendMessageButton" type="submit">작성하기</button>
             </div>
         </form>
+
+        <div>
+            <% for(var i=0;i<post.comments.length; i++){%>
+                <div class="post-preview">
+                        <div>
+                            신청자 :
+                            <%= post.comments[i].userid.username%>
+                        </div>
+                
+                        <!-- 작성자 -->
+                        <div>
+                            희망사항 :
+                            <%=post.comments[i].content%>
+                        </div>
+                        
+                        <div>
+                            구매금액 :
+                            <%=post.comments[i].buying%>
+                        </div>
+                </div>
+                <%}%>
+        </div>
     </div>
     <br>
     <%- include('layouts/footer')-%>
