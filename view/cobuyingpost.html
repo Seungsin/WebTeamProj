@@ -19,21 +19,21 @@
 <body>
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-light bg-success">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#!">KNU share Consuming</a>
+        <div class="container px-4 px-lg-5 " >
+            <a class="navbar-brand text-white" href="#!">KNU share Consuming</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
                 aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
             <div class="col-sm-8 col-md-6 offset-md-4 collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
-                    <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">공동구매</a></li>
+                    <li class="nav-item"><a class="nav-link active text-white" aria-current="page" href="#!">공동구매</a></li>
 
-                    <li class="nav-item"><a class="nav-link " href="#!">교환</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#!">나눔</a></li>
-                    <li class="nav-item"> <button style="margin-left: 10px" class="btn btn-outline-dark"
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#!">교환</a></li>
+                    <li class="nav-item"><a class="nav-link text-white-50" href="#!">나눔</a></li>
+                    <li class="nav-item"> <button style="margin-left: 10px" class="btn btn-outline-lignt"
                             type="submit">Sign in</button></li>
-                    <li class="nav-item"> <button style="margin-left: 10px" class="btn btn-outline-dark"
+                    <li class="nav-item"> <button style="margin-left: 10px" class="btn btn-outline-light"
                             type="submit">Sign up</button></li>
                 </ul>
             </div>
@@ -52,7 +52,7 @@
     <div class="container px-4 px-lg-5 mt-5">
         <div class="row">
             <span class="col" style="width: 40%;">
-                <img style="height: 300px;margin-right: 30px;" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg"
+                <img style="height: 300px;margin-right: 30px;" src="<%= posts[i].image %>"
                     alt="..." />
             </span>
             <span class="col">
@@ -84,7 +84,7 @@
         <div class="mt-5">
             <!-- <h2 class="subheading"><%=post.body%></h2> -->
             <h3 id="body">
-                저는 골든고구마피자 먹을겁니다! 계좌번호는 123-341-1-42-454 입니다.
+                <%=post.body%>
             </h3>
         </div>
 

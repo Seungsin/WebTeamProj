@@ -26,8 +26,8 @@
                         
                         <li class="nav-item"><a class="nav-link active" aria-current="page" href="#!">교환</a></li>
                         <li class="nav-item"><a class="nav-link" href="#!">나눔</a></li>
-                        <li class="nav-item">  <button style="margin-left: 10px"class="btn btn-outline-dark" type="submit">Sign in</button></li>
-                        <li class="nav-item"> <button style="margin-left: 10px"class="btn btn-outline-dark" type="submit">Sign up</button></li>
+                        <li class="nav-item">  <button style="margin-left: 10px"class="btn btn-outline-success" type="submit">Sign in</button></li>
+                        <li class="nav-item"> <button style="margin-left: 10px"class="btn btn-outline-success" type="submit">Sign up</button></li>
                     </ul>
                 </div>
             </div>
@@ -45,11 +45,11 @@
             <div class="container px-4 px-lg-5 mt-5">
                 <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-3 justify-content-center"> <!--그리드 칸 수 row-col-xl-3-->
 
-
+                    <% for(var i=0;i<posts.length;i++){%>
                     <div class="col mb-5">
                         <div class="card h-100">
                             <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
+                            <img class="card-img-top" src="<%= posts[i].image %>" alt="..." />
                             <!-- Product details-->
                             <div class="card-body p-4">
                                 <div class="text-center">
@@ -71,54 +71,7 @@
                     </div>
 
 
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product title-->
-                                    <h5 id="title" class="fw-bolder">마늘과 양파 교환하실분</h5>
-                                    <!-- 제목, 본문, 문, 작성자아이디, 마감, 이미지 -->
-                                    <!--작성자-->
-                                    <div style="text-align: left;">작성자 <span id="name">seungsin2</span></div>
-                                    <div style="text-align: left;">위치 <span id="gate">쪽문</span></div>
-                                    <div style="text-align: left;">마감시간 <span id="time">~2021. 06. 28 12:00</span></div>
-                                   
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    
-                    <div class="col mb-5">
-                        <div class="card h-100">
-                            <!-- Product image-->
-                            <img class="card-img-top" src="https://dummyimage.com/450x300/dee2e6/6c757d.jpg" alt="..." />
-                            <!-- Product details-->
-                            <div class="card-body p-4">
-                                <div class="text-center">
-                                    <!-- Product title-->
-                                    <h5 id="title" class="fw-bolder">A4용지와 볼펜 교환하실분</h5>
-                                    <!-- 제목, 본문, 문, 작성자아이디, 마감, 이미지 -->
-                                    <!--작성자-->
-                                    <div style="text-align: left;">작성자 <span id="name">Thing-zoo</span></div>
-                                    <div style="text-align: left;">위치 <span id="gate">북문</span></div>
-                                    <div style="text-align: left;">마감시간 <span id="time">~2021. 05. 30 12:00</span></div>
-                                   
-                                </div>
-                            </div>
-                            <!-- Product actions-->
-                            <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                <div class="text-center"><a class="btn btn-outline-dark mt-auto" href="#">View options</a></div>
-                            </div>
-                        </div>
-                    </div>
+                    <%}%>
 
                 </div>
             </div>
