@@ -36,6 +36,7 @@
                     <%=post.deadline%>
                     <!-- 2020.12.13 -->
                 </div>
+                <%if(post.isfinished==0){%>
                 <div style="margin-bottom: 20px;">
                     
                     <span id="count"><%=post.deadline.getTime()%></span>
@@ -48,6 +49,14 @@
                         <a class="btn btn-outline-success mt-auto" href="/exchange/finish/<%=post._id%>">마감하기</a>
                     <%}%>
                 </div>
+                <%}else{%>
+                    <div style="margin-bottom: 20px; color:rgb(221, 107, 107);">
+                    
+                        <span>마감되었습니다.</span>
+        
+                        
+                    </div>
+                <%}%>
             <span>
         </div>
         <div class="mt-5">
