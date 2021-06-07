@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('layouts/header')-%>
+    <body>
+        <!-- Navigation-->
+        <%-include('layouts/navbar_white')-%>
+
+        <!-- Header-->
+        <header class="bg-success py-5">
+            <div class="container px-4 px-lg-5 my-5">
+                <div class="text-center text-white">
+                    <h1 class="display-4 fw-bolder">☘회원가입☘</h1>
+                    <p class="lead fw-normal text-white-50 mb-0">환영합니다~</p>
+                </div>
+            </div>
+        </header>
+
+        <!-- Section-->
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-5 col-sm-4 mx-auto">
+                    <form action="/users/register" method="POST" enctype="multipart/form-data">
+                        <div class="control-group">
+                            <div class="form-group floating-label-form-group controls input input--hoshi">
+                                <input class="input__field input__field--hoshi" type="text" name="username" />
+                                <label class="input__label input__label--hoshi input__label--hoshi-color">
+                                    <span class="input__label-content input__label-content--hoshi">ID</span>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div class="form-group col-xs-12 floating-label-form-group controls input input--hoshi">
+                                <input class="input__field input__field--hoshi" type="text" name="password" />
+                                <label class="input__label input__label--hoshi input__label--hoshi-color" for="input-4">
+                                    <span class="input__label-content input__label-content--hoshi">Password</span>
+                                </label>
+                            </div>
+                        </div>
+                        <br />
+                        <div class="form-group mb-5">
+                            <button type="submit" class="btn btn-success col-4 mx-4">회원가입</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Footer-->
+        <%-include('layouts/footer')-%>
+
+    </body>
+</html>
