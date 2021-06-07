@@ -43,6 +43,10 @@ const cobCommentController = require('./controllers/cobCommentStore')
 const exCommentController = require('./controllers/exCommentStore')
 const shCommentController = require('./controllers/shCommentStore')
 
+const cobFinishController = require('./controllers/cobFinish')
+const exFinishController = require('./controllers/exFinish');
+const shFinishController = require('./controllers/shFinish');
+
 app.use(expressSession({
     resave: true,
     saveUninitialized: true,
@@ -93,3 +97,8 @@ app.post('/newshare/store', authMiddleware, shareStoreController)
 app.post('/cobuyingpost/newcomment/:id',authMiddleware, cobCommentController)
 app.post('/exchangepost/newcomment/:id',authMiddleware, exCommentController)
 app.post('/sharepost/newcomment/:id',authMiddleware, shCommentController)
+
+//finish
+app.get('/cobuying/finish/:id', cobFinishController)
+app.get('/share/finish/:id', shFinishController)
+app.get('/exchange/finish/:id', exFinishController)
