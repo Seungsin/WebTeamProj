@@ -3,6 +3,10 @@ const Schema = mongoose.Schema;
 
 const CobuyingSchema = new Schema({
     option: {type : Number},
+    isfinished:{
+        type:Number,
+        default:0
+    },
     title: String,
     body: String,
     gate: String,

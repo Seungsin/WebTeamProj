@@ -5,6 +5,10 @@ const ShareSchema = new Schema({
     title: String,
     body: String,
     gate: String,
+    isfinished:{
+        type:Number,
+        default:0
+    },
     userid: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User',
