@@ -39,6 +39,8 @@ const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthen
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const authMiddleware = require('./middleware/authMiddleware')
 
+const commentController = require('./controllers/commentStore')
+
 app.use(expressSession({
     resave: true,
     saveUninitialized: true,
@@ -83,3 +85,6 @@ app.get('/newshare', authMiddleware, shareNewController)
 app.post('/newcobuying/store', authMiddleware, cobuyingStoreController)
 app.post('/newexchange/store', authMiddleware, exchangeStoreController)
 app.post('/newshare/store', authMiddleware, shareStoreController)
+
+//comment
+app.post('/cobuyingpost/newcomment/:id', commentController)

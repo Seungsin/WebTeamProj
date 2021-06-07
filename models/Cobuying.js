@@ -15,6 +15,10 @@ const CobuyingSchema = new Schema({
         type : Number,
         default: 0
     },
+    sum:{
+        type : Number,
+        default: 0
+    },
     minimum: {type : Number},
     deadline: {
         type:Date,
@@ -22,15 +26,19 @@ const CobuyingSchema = new Schema({
     },
     image: String,
     comments: [{
-        body: String,
+        content: String,
         userid: {
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User',
             required:true
         },
-        buying: {type : Number},
+        buying: {
+            type : Number,
+            default : 0
+        },
         paying: String
     }],
+    // comments:[],
     account: String
 });
 
