@@ -80,6 +80,28 @@
             </div>
         </form>
     </div>
+    <div class="container">
+        <h2>구매신청목록</h2>
+        <% for(var i=0;i<post.comments.length; i++){%>
+            <div class="post-preview container my-3 py-1 bg-light rounded"">
+                    <div>
+                        신청자 :
+                        <%= post.comments[i].username%>
+                    </div>
+            
+                    <!-- 작성자 -->
+                    <div>
+                        희망사항 :
+                        <%=post.comments[i].content%>
+                    </div>
+                    
+                    <div>
+                        구매금액 :
+                        <%=post.comments[i].buying%>
+                    </div>
+            </div>
+            <%}%>
+    </div>
     <br>
     <%- include('layouts/footer')-%>
     <script src="/js/timer.js"></script>
