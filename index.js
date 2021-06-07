@@ -53,8 +53,8 @@ app.use(expressSession({
     secret:'keyboard cat'
 }))
 
-let post = process.env.PORT
-if (post == null || port == "") {
+let port = process.env.PORT
+if (port == null || port == "") {
     port = 4000
 }
 
