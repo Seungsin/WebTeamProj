@@ -30,11 +30,13 @@ const shareStoreController = require('./controllers/shareStore')
 
 const mainController = require('./controllers/main')
 
+const logoutController = require('./controllers/logout')
 const loginController = require('./controllers/login')
 const loginUserController = require('./controllers/loginUser')
 const storeUserController = require('./controllers/storeUser')
 const newUserController = require('./controllers/newUser')
 
+const redirectIfNotAuthMiddleware = require('./middleware/redirectIfNotAuthMiddleware')
 const redirectIfAuthenticatedMiddleware = require('./middleware/redirectIfAuthenticatedMiddleware')
 const validateMiddleWare = require('./middleware/validationMiddleware')
 const authMiddleware = require('./middleware/authMiddleware')
@@ -74,6 +76,7 @@ app.use('/newshare/store', validateMiddleWare)
 
 
 // 로그인, 회원가입
+app.get('/auth/logout', redirectIfNotAuthMiddleware, logoutController)
 app.get('/auth/register', redirectIfAuthenticatedMiddleware, newUserController)
 app.get('/auth/login', redirectIfAuthenticatedMiddleware, loginController)
 app.post('/users/register', redirectIfAuthenticatedMiddleware, storeUserController)
