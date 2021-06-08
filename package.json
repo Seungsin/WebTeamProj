@@ -4,7 +4,7 @@
   "description": "2021-1 고급웹프로그래밍 팀프로젝트",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js"
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
@@ -12,6 +12,9 @@
   },
   "author": "",
   "license": "ISC",
+  "engines": {
+    "node": "14.16.1"
+  },
   "bugs": {
     "url": "https://github.com/Seungsin/WebTeamProj/issues"
   },
@@ -26,7 +29,7 @@
     "express": "^4.17.1",
     "express-fileupload": "^1.2.1",
     "express-session": "^1.17.2",
-    "mongoose": "^5.12.10",
+    "mongoose": "^5.12.13",
     "multiparty": "^4.2.2"
   }
 }

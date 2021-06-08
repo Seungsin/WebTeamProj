@@ -11,7 +11,7 @@ app.use(express.json())
 app.use(fileUpload())
 
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/my_database'), {useNewUrlParser:true}
+mongoose.connect('mongodb+srv://cathy:1234@cluster0.jm4mt.mongodb.net/test'), {useNewUrlParser:true}
 
 const cobuyingGetController = require('./controllers/cobuyingGet')
 const cobuyingHomeController = require('./controllers/cobuyingHome')
@@ -55,8 +55,13 @@ app.use(expressSession({
     secret:'keyboard cat'
 }))
 
-app.listen(4000, ()=>{
-    console.log('App listening on port 4000')
+let port = process.env.PORT
+if (port == null || port == "") {
+    port = 4000
+}
+
+app.listen(port, ()=>{
+    console.log('App listening ...')
 })
 
 app.use("*", (req, res, next)=>{
