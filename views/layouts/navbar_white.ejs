@@ -1,21 +1,22 @@
- <!-- Navigation-->
- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+<!-- Navigation-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container px-4 px-lg-5">
         <a class="navbar-brand" href="/">KNU share Consuming</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="col-sm-8 col-md-6 offset-md-4 collapse navbar-collapse" id="navbarSupportedContent">
-           
+        <div class="col-md-6 offset-lg-6 collapse navbar-collapse" id="navbarSupportedContent">
+
             <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-lg-4">
                 <li class="nav-item"><a class="nav-link" href="/cobuying">공동구매</a></li>
                 <li class="nav-item"><a class="nav-link" href="/exchange">교환</a></li>
                 <li class="nav-item"><a class="nav-link" href="/share">나눔</a></li>
                 <%if(!loggedIn){%>
-                <li class="nav-item">  <button style="margin-left: 10px"class="btn btn-outline-success" type="submit" onclick="location.href='/auth/login'">Sign in</button></li>
-                <li class="nav-item"> <button style="margin-left: 10px"class="btn btn-outline-success" type="submit" onclick="location.href='/auth/register'">Sign up</button></li>
+                <li class="nav-item"><a class="nav-link" href="/auth/login">로그인</a></li>
+                <li class="nav-item"><a class="nav-link" href="/auth/register">회원가입</a></li>
                 <%}else{%>
-                    <li class="nav-item"> <button style="margin-left: 10px; color:rgb(233, 114, 114)" class="btn btn-outline-light" type="submit" onclick="location.href='/auth/logout'">Logout</button></li>
+                <li class="nav-item"><a class="nav-link" href="/auth/logout">로그아웃</a></li>
                 <%}%>
             </ul>
         </div>
