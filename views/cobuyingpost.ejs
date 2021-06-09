@@ -109,7 +109,7 @@
     <div class="container">
         <h2>구매신청목록(<%=post.comments.length%>개)</h2>
         <% for(var i=0;i<post.comments.length; i++){%>
-            <div class="post-preview container my-3 py-1 bg-light rounded"">
+            <div class="post-preview container my-3 py-2 bg-light rounded"">
                     <div>
                         신청자 :
                         <%= post.comments[i].username%>
@@ -127,7 +127,7 @@
                     </div>
                     <%if(post.comments[i].userid==post.myid&&post.isfinished==0){%>
                         <!-- <div>주인은 너다</div> -->
-                        <button class="btn btn-outline-success mt-auto" onclick="isDelete('/share/delete/<%=post._id%>?what=1&where=0&place=<%=i%>')">삭제하기</a>
+                        <button class="btn btn-outline-success mt-2" onclick="isDelete('/cobuying/delete/<%=post._id%>?what=1&where=0&place=<%=i%>')">삭제하기</a>
                     <%}%>
             </div>
             <%}%>
