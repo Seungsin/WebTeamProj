@@ -4,7 +4,7 @@ const path = require('path')
 module.exports = async (req, res)=>{
     let image={};
     let sum=req.body.buying;
-    if(!req.files){
+    if(!req.body.imgUrl){
         image.name="baisic.jpg"
         await Cobuying.create({
             ...req.body,
@@ -15,16 +15,14 @@ module.exports = async (req, res)=>{
         
         res.redirect('/cobuying')
     }else{
-        image=req.files.image
-        image.mv(path.resolve(__dirname, '..','public/assets/img', image.name), async (error)=>{
+        image=req.body.imgUrl
             await Cobuying.create({
                 ...req.body,
-                image: '/assets/img/'+image.name,
+                image: image,
                 sum:sum,
                 userid: req.session.userId
             })
             
             res.redirect('/cobuying')
-        })
     }
 }
