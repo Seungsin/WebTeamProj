@@ -57,6 +57,10 @@
                         
                     </div>
                 <%}%>
+                <%if(post.isOwner==1){%>
+                    <!-- <div>주인은 너다</div> -->
+                    <button class="btn btn-outline-success mt-auto" onclick="isDelete('/exchange/delete/<%=post._id%>?what=0&where=1')">삭제하기</a>
+                <%}%>
             <span>
         </div>
         <div class="mt-5">
@@ -107,7 +111,10 @@
                         희망사항 :
                         <%=post.comments[i].content%>
                     </div>
-                    
+                    <%if(post.isOwner==1&&post.isfinished==0){%>
+                        <!-- <div>주인은 너다</div> -->
+                        <button class="btn btn-outline-success mt-auto" onclick="isDelete('/exchange/delete/<%=post._id%>?what=1&where=1&place=<%=i%>')">삭제하기</a>
+                    <%}%> 
                     
             </div>
             <%}%>
