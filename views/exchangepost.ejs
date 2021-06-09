@@ -46,7 +46,7 @@
                 <div>
                     <%if(post.isOwner==1){%>
                         <!-- <div>주인은 너다</div> -->
-                        <button class="btn btn-outline-success mt-auto" onclick="isFinish('/exchange/finish/<%=post._id%>')">마감하기</a>
+                        <button class="btn btn-outline-success" onclick="isFinish('/exchange/finish/<%=post._id%>')">마감하기</a>
                     <%}%>
                 </div>
                 <%}else{%>
@@ -59,7 +59,7 @@
                 <%}%>
                 <%if(post.isOwner==1){%>
                     <!-- <div>주인은 너다</div> -->
-                    <button class="btn btn-outline-success mt-auto" onclick="isDelete('/exchange/delete/<%=post._id%>?what=0&where=1')">삭제하기</a>
+                    <button class="btn btn-outline-success mt-2" onclick="isDelete('/exchange/delete/<%=post._id%>?what=0&where=1')">삭제하기</a>
                 <%}%>
             <span>
         </div>
