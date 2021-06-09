@@ -58,6 +58,10 @@
                         
                     </div>
                 <%}%>
+                <%if(post.isOwner==1){%>
+                    <!-- <div>주인은 너다</div> -->
+                    <button class="btn btn-outline-success mt-auto" onclick="isDelete('/share/delete/<%=post._id%>?what=0&where=2')">삭제하기</a>
+                <%}%>
             <span>
         </div>
         <div class="mt-5">
@@ -96,7 +100,7 @@
     <div class="container">
         <h2>나눔신청목록(<%=post.comments.length%>개)</h2>
         <% for(var i=0;i<post.comments.length; i++){%>
-            <div class="post-preview container my-3 py-1 bg-light rounded"">
+            <div class="post-preview container my-3 py-2 bg-light rounded"">
                     <div>
                         신청자 :
                         <%= post.comments[i].username%>
@@ -107,7 +111,10 @@
                         희망사항 :
                         <%=post.comments[i].content%>
                     </div>
-                   
+                    <%if(post.comments[i].userid==post.myid&&post.isfinished==0){%>
+                        <!-- <div>주인은 너다</div> -->
+                        <button class="btn btn-outline-success mt-2" onclick="isDelete('/share/delete/<%=post._id%>?what=1&where=2&place=<%=i%>')">삭제하기</a>
+                    <%}%>
             </div>
             <%}%>
     </div>

@@ -61,6 +61,10 @@
                         
                     </div>
                 <%}%>
+                <%if(post.isOwner==1){%>
+                    <!-- <div>주인은 너다</div> -->
+                    <button class="btn btn-outline-success mt-auto" onclick="isDelete('/cobuying/delete/<%=post._id%>?what=0&where=0')">삭제하기</a>
+                <%}%>
             <span>
         </div>
         <div class="mt-5">
@@ -88,7 +92,7 @@
                     <div class=" container control-group  rounded mb-3 pt-2">
                         <h4>구매금액</h4>
                         <div class="form-group floating-label-form-group controls">
-                            <input name="buying" class="form-control" id="buying" type="number" placeholder="금액을 입력하세요(숫자만 입력)"/>
+                            <input name="buying" class="form-control" id="buying" type="number" min="0" placeholder="금액을 입력하세요(숫자만 입력)"/>
                         </div>
                     </div>
                 </div>
@@ -105,7 +109,7 @@
     <div class="container">
         <h2>구매신청목록(<%=post.comments.length%>개)</h2>
         <% for(var i=0;i<post.comments.length; i++){%>
-            <div class="post-preview container my-3 py-1 bg-light rounded"">
+            <div class="post-preview container my-3 py-2 bg-light rounded"">
                     <div>
                         신청자 :
                         <%= post.comments[i].username%>
@@ -121,6 +125,10 @@
                         구매금액 :
                         <%=post.comments[i].buying%>
                     </div>
+                    <%if(post.comments[i].userid==post.myid&&post.isfinished==0){%>
+                        <!-- <div>주인은 너다</div> -->
+                        <button class="btn btn-outline-success mt-2" onclick="isDelete('/cobuying/delete/<%=post._id%>?what=1&where=0&place=<%=i%>')">삭제하기</a>
+                    <%}%>
             </div>
             <%}%>
     </div>
