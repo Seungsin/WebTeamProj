@@ -47,12 +47,12 @@
                     <!-- 12시간 23분 23초 -->
                     
                 </div>
-                <div>
+                <span >
                     <%if(post.isOwner==1){%>
                         <!-- <div>주인은 너다</div> -->
-                        <button class="btn btn-outline-success mt-auto" onclick="isFinish('/cobuying/finish/<%=post._id%>')">마감하기</a>
+                        <button class="btn btn-outline-success" onclick="isFinish('/cobuying/finish/<%=post._id%>')">마감하기</a>
                     <%}%>
-                </div>
+                </span>
                 <%}else{%>
                     <div style="margin-bottom: 20px; color:rgb(221, 107, 107);">
                     
@@ -61,10 +61,12 @@
                         
                     </div>
                 <%}%>
+                <span >
                 <%if(post.isOwner==1){%>
                     <!-- <div>주인은 너다</div> -->
-                    <button class="btn btn-outline-success mt-auto" onclick="isDelete('/cobuying/delete/<%=post._id%>?what=0&where=0')">삭제하기</a>
+                    <button class="btn btn-outline-success mx-2" onclick="isDelete('/cobuying/delete/<%=post._id%>?what=0&where=0')">삭제하기</a>
                 <%}%>
+                </span>
             <span>
         </div>
         <div class="mt-5">
