@@ -15,10 +15,16 @@ module.exports = async (req, res) =>{
         await db[where].findByIdAndDelete(req.params.id)
         return res.redirect(goto[where])
     }else if(what==1){
-        let comment = (await db[where].findById(req.params.id)).comments
+        const data = (await db[where].findById(req.params.id))
+        let comment = data.comments
+        if(where==0) {
+            const money = comment[req.query.place].buying
+            const sum = data.sum - money
+            await db[where].findByIdAndUpdate(req.params.id, {"sum":sum}, function(err, docs){})
+        }
         comment.splice(req.query.place, 1)
         // console.log(req.query.place)
-        console.log(comment)
+        // console.log(comment)
         await db[where].findByIdAndUpdate(req.params.id, {"comments":comment}, function(err, docs){})
         return res.redirect(goto2[where]+req.params.id)
         // return res.render('/')
