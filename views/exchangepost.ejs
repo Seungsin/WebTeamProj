@@ -100,20 +100,22 @@
     <div class="container">
         <h2>교환신청목록(<%=post.comments.length%>개)</h2>
         <% for(var i=0;i<post.comments.length; i++){%>
-            <div class="post-preview container my-3 py-2 bg-light rounded"">
+            <div class="post-preview container my-3 py-2 bg-light rounded" style="display:flex; justify-content:space-between">
                     <div>
-                        신청자 :
-                        <%= post.comments[i].username%>
-                    </div>
-            
-                    <!-- 작성자 -->
-                    <div>
-                        희망사항 :
-                        <%=post.comments[i].content%>
+                        <div>
+                            신청자 :
+                            <%= post.comments[i].username%>
+                        </div>
+                
+                        <!-- 작성자 -->
+                        <div>
+                            희망사항 :
+                            <%=post.comments[i].content%>
+                        </div>
                     </div>
                     <%if(post.comments[i].userid==post.myid&&post.isfinished==0){%>
                         <!-- <div>주인은 너다</div> -->
-                        <button class="btn btn-outline-success mt-2" onclick="isDelete('/exchange/delete/<%=post._id%>?what=1&where=1&place=<%=i%>')">삭제하기</a>
+                        <button style="color:rgb(223, 112, 112); border:none; background:none; font-size:12px" onclick="isDelete('/exchange/delete/<%=post._id%>?what=1&where=1&place=<%=i%>')">삭제하기</a>
                     <%}%>                     
             </div>
             <%}%>
