@@ -20,6 +20,7 @@ module.exports = async (req, res)=>{
             await Cobuying.create({
                 ...req.body,
                 image: '/assets/img/'+image.name,
+                sum:sum,
                 userid: req.session.userId
             })
             
