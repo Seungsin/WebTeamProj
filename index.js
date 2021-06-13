@@ -119,3 +119,7 @@ app.get('/exchange/finish/:id', exFinishController)
 app.get('/cobuying/delete/:id',authMiddleware, deletePostController)
 app.get('/exchange/delete/:id',authMiddleware, deletePostController)
 app.get('/share/delete/:id',authMiddleware, deletePostController)
+
+app.all('*', (req, res)=>{
+    res.render('404Page')
+})

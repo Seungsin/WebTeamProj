@@ -3,9 +3,9 @@ const path = require('path')
 
 const {Storage} = require('@google-cloud/storage');
 
-const projectId = 'ShareConsumeProj'
-const keyFilename = 'shareconsumeproj-1bcf021a734a.json'
-const storage = new Storage({projectId, keyFilename});
+// const projectId = 'ShareConsumeProj'
+// const keyFilename = 'shareconsumeproj-1bcf021a734a.json'
+const storage = new Storage(key='AIzaSyCUFHKXhJpjJY3SsJQKoVyB_g0-FAGY65o');
 
 module.exports = async (req, res)=>{
     let image={};
@@ -22,6 +22,8 @@ module.exports = async (req, res)=>{
         res.redirect('/cobuying')
     }else{
         image=req.files.image
+        // console.log(fs.readFile(files.uploadfile.path))
+
         paths = path.resolve(__dirname, '..','public/assets/img', image.name)
         image.mv(paths, async (error)=>{
             uploadFile(paths, image.name).catch(console.error);
@@ -42,5 +44,5 @@ async function uploadFile(filePath, name) {
       destination: name,
     });
   
-    console.log(`${filePath} uploaded to ${consum_proj}`);
+    console.log(`${filePath} uploaded to consum_proj`);
   }
