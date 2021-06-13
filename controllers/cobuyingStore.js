@@ -45,10 +45,6 @@ async function uploadFile(filePath, name) {
       destination: name,
     });
   
-<<<<<<< HEAD
+
     console.log(`${filePath} uploaded to consum_proj`);
   }
-=======
-    console.log(`${filePath} uploaded to ${consum_proj}`);
-  }
->>>>>>> d0871a065dbbfd925ed2707772813bd5c250c08b
