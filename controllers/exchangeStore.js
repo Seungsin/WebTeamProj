@@ -9,7 +9,7 @@ const storage = new Storage({projectId, keyFilename});
 
 module.exports = async (req, res)=>{
     let image={};
-    if(!req.files){
+    if(!req.body.imgUrl){
         image.name="baisic.jpg"
         await Exchange.create({
             ...req.body,
@@ -25,12 +25,11 @@ module.exports = async (req, res)=>{
             uploadFile(paths, image.name).catch(console.error);
             await Exchange.create({
                 ...req.body,
-                image: 'https://storage.googleapis.com/consum_proj/'+image.name,
+                image: 'https://storage.googleapis.com/consum_proj/'+image.name,       
                 userid: req.session.userId
             })
             
             res.redirect('/exchange')
-        })
     }
 }
 

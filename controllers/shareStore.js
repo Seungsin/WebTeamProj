@@ -9,7 +9,7 @@ const storage = new Storage({projectId, keyFilename});
 
 module.exports = async (req, res)=>{
     let image={};
-    if(!req.files){
+    if(!req.body.imgUrl){
         image.name="baisic.jpg"
         await Share.create({
             ...req.body,
@@ -19,6 +19,7 @@ module.exports = async (req, res)=>{
         
         res.redirect('/share')
     }else{
+
         image=req.files.image
         paths = path.resolve(__dirname, '..','public/assets/img', image.name)
         image.mv(paths, async (error)=>{
@@ -30,7 +31,6 @@ module.exports = async (req, res)=>{
             })
             
             res.redirect('/share')
-        })
     }
 }
 
