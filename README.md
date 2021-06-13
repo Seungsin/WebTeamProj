@@ -12,7 +12,8 @@ https://glacial-oasis-61349.herokuapp.com/
 
 ## 사용방법
 ```
-index.js 가 있는 폴더에서 npm start
+module들을 전부 다운받고 index.js 가 있는 폴더에서 npm start
+google storage사용하였기에 서비스키가 필요함
 ```
 
 ## modules
