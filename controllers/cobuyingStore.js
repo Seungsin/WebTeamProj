@@ -2,10 +2,11 @@ const Cobuying = require('../models/Cobuying.js')
 const path = require('path')
 
 const {Storage} = require('@google-cloud/storage');
-
 // const projectId = 'ShareConsumeProj'
-// const keyFilename = 'shareconsumeproj-1bcf021a734a.json'
+// const keyFilename = 'google-credentials.json'
+// const storage = new Storage({projectId, keyFilename});
 const storage = new Storage(key='AIzaSyCUFHKXhJpjJY3SsJQKoVyB_g0-FAGY65o');
+
 
 module.exports = async (req, res)=>{
     let image={};
@@ -44,5 +45,10 @@ async function uploadFile(filePath, name) {
       destination: name,
     });
   
+<<<<<<< HEAD
     console.log(`${filePath} uploaded to consum_proj`);
   }
+=======
+    console.log(`${filePath} uploaded to ${consum_proj}`);
+  }
+>>>>>>> d0871a065dbbfd925ed2707772813bd5c250c08b
