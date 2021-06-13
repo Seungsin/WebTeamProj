@@ -9,7 +9,7 @@ const storage = new Storage({projectId, keyFilename});
 
 module.exports = async (req, res)=>{
     let image={};
-    if(!req.body.imgUrl){
+    if(!req.files){
         image.name="baisic.jpg"
         await Exchange.create({
             ...req.body,
@@ -30,6 +30,7 @@ module.exports = async (req, res)=>{
             })
             
             res.redirect('/exchange')
+        })
     }
 }
 

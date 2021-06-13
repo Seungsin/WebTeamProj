@@ -10,7 +10,7 @@ const storage = new Storage({projectId, keyFilename});
 module.exports = async (req, res)=>{
     let image={};
     let sum=req.body.buying;
-    if(!req.body.imgUrl){
+    if(!req.files){
         image.name="baisic.jpg"
         await Cobuying.create({
             ...req.body,
@@ -28,12 +28,12 @@ module.exports = async (req, res)=>{
             await Cobuying.create({
                 ...req.body,
                 image: 'https://storage.googleapis.com/consum_proj/'+image.name,
-
                 sum:sum,
                 userid: req.session.userId
             })
             
             res.redirect('/cobuying')
+        })
     }
 }
 
