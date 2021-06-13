@@ -6,7 +6,7 @@ const {Storage} = require('@google-cloud/storage');
 // const projectId = 'ShareConsumeProj'
 // const keyFilename = 'google-credentials.json'
 // const storage = new Storage({projectId, keyFilename});
-const storage = new Storage(key='AIzaSyCUFHKXhJpjJY3SsJQKoVyB_g0-FAGY65o');
+const storage = new Storage(key=서비스키API);
 
 module.exports = async (req, res)=>{
     let image={};
